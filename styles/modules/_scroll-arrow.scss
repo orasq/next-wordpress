@@ -1,0 +1,11 @@
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #fff;
+  animation: scroll-arrow 2s ease-out infinite;
+
+  z-index: 2;
+}

@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+  z-index: 2;
+
+  &__logo {
+    transition: transform $anim_fast ease-in-out;
+
+    @include hover {
+      &:hover {
+        transform: skew(-20deg);
+      }
+    }
+  }
+
+  &__burger {
+    padding: 10px;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background $anim_med ease-out;
+    transition-property: background, transform;
+
+    @include hover {
+      &:hover {
+        transform: scale(1.1);
+        background: rgba(0, 0, 0, 0.1);
+        transition-duration: $anim_fast;
+      }
+    }
+
+    & svg {
+      display: block; /* remove extra space below svg */
+    }
+  }
+}

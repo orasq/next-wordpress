@@ -1,0 +1,80 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  height: 100vh;
+  width: 200px;
+  padding: 15px;
+  padding-left: 0;
+  z-index: 2;
+
+  @include s_screen {
+    right: -300px;
+    width: 300px;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 30px;
+    background: $surface_light-grey;
+    border-radius: $radius_big;
+    text-align: center;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    @include s_screen {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+
+    & > * + * {
+      margin-top: 30px;
+    }
+  }
+
+  &__menu-item {
+    font-size: 1rem;
+    color: $med_txt;
+
+    & a {
+      padding: 10px 15px;
+      border-radius: $radius_small;
+      transition: background $anim_fast ease-out;
+
+      @include hover {
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+
+    @include s_screen {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__bottom {
+    font-size: 1.2rem;
+    text-align: center;
+
+    & > * + * {
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.house-card-list {
+  display: grid;
+  justify-content: center;
+
+  gap: 15px;
+  list-style: none;
+
+  @include s_screen {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

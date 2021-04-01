@@ -18,6 +18,20 @@ body {
   overflow-x: hidden;
   margin: 0;
   background: $bg_grey;
+
+  &.menu-is-open {
+    overflow: hidden;
+
+    & .page-wrapper {
+      will-change: transform;
+      transform: translateX(-200px);
+      transition: transform $anim_slow cubic-bezier(0, 0.98, 0.3, 1.01);
+
+      @include s_screen {
+        transform: translateX(-300px);
+      }
+    }
+  }
 }
 
 img {
@@ -36,6 +50,13 @@ h6 {
 
 p {
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 a {

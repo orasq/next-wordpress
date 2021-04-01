@@ -1,0 +1,5 @@
+.page-wrapper {
+  position: relative;
+  transition: transform $anim_slow cubic-bezier(0, 0.98, 0.3, 1.01);
+  will-change: transform;
+}

@@ -1,8 +1,19 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaArrowRight } from "react-icons/fa";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("menu-is-open");
+    } else {
+      document.body.classList.remove("menu-is-open");
+    }
+  }, [isMenuOpen]);
+
   return (
     <header className="header">
       <div className="header__logo">
@@ -12,8 +23,8 @@ function Header() {
           </a>
         </Link>
       </div>
-      <button className="header__burger">
-        <FaBars />
+      <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="header__burger">
+        {isMenuOpen ? <FaArrowRight /> : <FaBars />}
       </button>
     </header>
   );

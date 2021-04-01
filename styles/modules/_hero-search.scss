@@ -1,8 +1,8 @@
 .hero-search {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 800px;
+  width: 100%;
+  max-width: 500px;
   padding: 10px 20px;
   background: #fff;
   border-radius: $radius_round;
@@ -25,6 +25,7 @@
 
   &__select {
     flex: 1;
+    min-width: 0px;
     pointer-events: none;
   }
 

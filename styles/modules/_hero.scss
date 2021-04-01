@@ -30,25 +30,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     margin-top: 10%;
+    padding: 0 30px;
     color: #fff;
     text-align: center;
   }
 
   &__text-wrap {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+
+    @include m_screen {
+      margin-bottom: 100px;
+    }
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 10px;
+
+    @include m_screen {
+      font-size: 3rem;
+    }
   }
 
   &__subtitle {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 300;
+
+    @include m_screen {
+      font-size: 2rem;
+    }
   }
 
   &__form-wrap {

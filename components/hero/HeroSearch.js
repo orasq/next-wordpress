@@ -4,41 +4,20 @@ import Select from "react-select";
 import { FaSearch } from "react-icons/fa";
 
 function HeroSearch() {
-  const optionsLocation = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
-  ];
-  const optionsProperty = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
-  ];
-  const optionsSell = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
+  const options = [
+    { value: "House", label: "House" },
+    { value: "Apartment", label: "Apartment" },
+    { value: "Loft", label: "Loft" },
+    { value: "Penthouse", label: "Penthouse" }
   ];
 
   return (
     <div className="hero-search">
       <Select
-        placeholder="Location"
+        placeholder="What are you looking for ?"
         classNamePrefix="hero-search"
         className="hero-search__select"
-        options={optionsLocation}
-      />
-      <Select
-        placeholder="Type of Property"
-        classNamePrefix="hero-search"
-        className="hero-search__select"
-        options={optionsProperty}
-      />
-      <Select
-        placeholder="status"
-        classNamePrefix="hero-search"
-        className="hero-search__select"
-        options={optionsSell}
+        options={options}
       />
       <button class="hero-search__button">
         <FaSearch />

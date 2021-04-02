@@ -18,18 +18,16 @@ body {
   overflow-x: hidden;
   margin: 0;
   background: $bg_grey;
+  transition: transform $anim_slow cubic-bezier(0, 0.98, 0.3, 1.01);
+  will-change: transform;
 
   &.menu-is-open {
-    overflow: hidden;
+    transform: translateX(-200px);
+    transition: transform $anim_slow cubic-bezier(0, 0.98, 0.3, 1.01);
+    will-change: transform;
 
-    & .page-wrapper {
-      will-change: transform;
-      transform: translateX(-200px);
-      transition: transform $anim_slow cubic-bezier(0, 0.98, 0.3, 1.01);
-
-      @include s_screen {
-        transform: translateX(-300px);
-      }
+    @include s_screen {
+      transform: translateX(-300px);
     }
   }
 }

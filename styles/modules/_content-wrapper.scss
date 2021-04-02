@@ -4,4 +4,8 @@
   height: 100%;
   margin: 0 auto;
   padding: 0 15px;
+
+  &--narrow {
+    max-width: $wrapper_width_narrow;
+  }
 }

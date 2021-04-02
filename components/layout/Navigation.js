@@ -10,19 +10,19 @@ function Navigation() {
           <span className="navigation__title">Menu</span>
           <ul className="navigation__menu">
             <li className="navigation__menu-item">
-              <Link href="#no">Menu item 1</Link>
+              <Link href="#no">Offer</Link>
             </li>
             <li className="navigation__menu-item">
-              <Link href="#no">Menu item 2</Link>
+              <Link href="#no">Projects</Link>
             </li>
             <li className="navigation__menu-item">
-              <Link href="#no">Menu item 3</Link>
+              <Link href="#no">Press</Link>
             </li>
             <li className="navigation__menu-item">
-              <Link href="#no">Menu item 4</Link>
+              <Link href="#no">About us</Link>
             </li>
             <li className="navigation__menu-item">
-              <Link href="#no">Menu item 5</Link>
+              <Link href="#no">Contact</Link>
             </li>
           </ul>
         </div>

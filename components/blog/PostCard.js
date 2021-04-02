@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function PostCard() {
   return (
@@ -6,7 +7,13 @@ function PostCard() {
       <Link href="/">
         <a>
           <div className="post-card__image-wrap">
-            <img className="post-card__image" src="/images/news-1.jpeg" />
+            <Image
+              className="post-card__image"
+              src="/images/news-1.jpeg"
+              layout="fill"
+              objectFit="cover"
+              alt="..."
+            />
           </div>
           <div className="post-card__text">
             <h3>Lorem ipsum Dolor sit met</h3>

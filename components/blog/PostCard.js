@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-function PostCard() {
+function PostCard(props) {
   return (
     <li className="post-card">
-      <Link href="/blog/slug">
+      <Link href={`/blog/${props.idLayout}`}>
         <a>
-          <div className="post-card__image-wrap">
+          <motion.div className="post-card__image-wrap" layoutId={props.idLayout}>
             <Image
               className="post-card__image"
               src="/images/news-1.jpeg"
@@ -14,7 +15,7 @@ function PostCard() {
               objectFit="cover"
               alt="..."
             />
-          </div>
+          </motion.div>
           <div className="post-card__text">
             <h3>Lorem ipsum Dolor sit met</h3>
             <span>

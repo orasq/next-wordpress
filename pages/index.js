@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Hero>
+        <Hero image="/images/hero.jpeg">
           <div className="hero__content-wrap">
             <div className="hero__text-wrap">
               <h1 className="hero__title">No. 1 in exclusive properties</h1>
@@ -24,12 +24,6 @@ export default function Home() {
             </div>
             <HeroSearch />
           </div>
-          {/* <div className="hero__post-title-wrap">
-            <h1 className="hero__post-title">Lorem ipsum Dolor sit met</h1>
-            <span>
-              Posted on <time datetime="2021-12-09">9th of December 2021</time>
-            </span>
-          </div> */}
         </Hero>
         <ContentWrapper>
           <Section>

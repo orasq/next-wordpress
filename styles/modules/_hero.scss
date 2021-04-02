@@ -7,7 +7,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  color: $dark_txt;
+  color: $txt_dark_grey;
 
   &__image-wrap {
     position: absolute;
@@ -74,19 +74,34 @@
 
   &__post-title-wrap {
     position: absolute;
-    bottom: 8vw;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: $wrapper_width;
-    padding: 0 15vw 0 15px;
-    font-size: 1.5rem;
+    padding: 0 30px;
+    font-size: 0.9rem;
     font-weight: 300;
     color: #fff;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+
+    @include l_screen {
+      bottom: 8vw;
+      font-size: 1.5rem;
+    }
+
+    @include xl_screen {
+      padding: 0 15vw 0 3vw;
+    }
 
     h1 {
-      margin-bottom: 15px;
-      font-size: 5rem;
+      margin-bottom: 10px;
+      font-size: 2rem;
+
+      @include m_screen {
+        margin-bottom: 15px;
+        font-size: 4vw;
+      }
     }
   }
 }

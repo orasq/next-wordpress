@@ -19,7 +19,7 @@
     justify-content: space-between;
     height: 100%;
     padding: 30px;
-    background: $surface_light-grey;
+    background: $surface_light_grey;
     border-radius: $radius_big;
     text-align: center;
   }
@@ -50,7 +50,8 @@
 
   &__menu-item {
     font-size: 1rem;
-    color: $med_txt;
+    font-weight: 200;
+    text-transform: uppercase;
 
     & a {
       padding: 10px 15px;

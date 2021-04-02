@@ -1,16 +1,23 @@
 /* COLORS */
 $bg_grey: #f7f7f7;
-$dark_txt: #222222;
-$med_txt: #707070;
-$light_txt: #afadad;
+$surface_light_grey: #ebebeb;
+$surface_light_blue: #f4fbfe;
+$surface_light_orange: #fcf3ea;
+$surface_orange: #f49b68;
 
-$surface_light-grey: #ebebeb;
+$txt_dark_grey: #222222;
+$txt_med_grey: #707070;
+$txt_light_grey: #afadad;
+
+$txt_orange: #ed7937;
+$txt_blue: #306d90;
 
 $primary_light: #ded3be;
+$blue_link: #6a9fba;
 
 /* SIZES */
 $wrapper_width: 1348px;
-$wrapper_width_narrow: 65rem;
+$wrapper_width_narrow: 80ch;
 
 /* BORDER RADIUS */
 $radius_small: 5px;

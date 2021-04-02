@@ -14,7 +14,13 @@
     padding: 50px;
   }
 
-  &__logo {
+  &--dark .header__logo-wrap,
+  &--dark .header__burger {
+    color: $txt_dark_grey;
+  }
+
+  &__logo-wrap {
+    color: #fff;
     transition: transform $anim_fast ease-in-out;
 
     @include hover {

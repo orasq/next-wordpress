@@ -1,0 +1,16 @@
+.back-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+  color: $blue_link;
+
+  @include m_screen {
+    margin-bottom: 50px;
+  }
+
+  & svg {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

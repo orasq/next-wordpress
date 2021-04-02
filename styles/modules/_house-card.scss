@@ -22,14 +22,14 @@
   &__text {
     padding: 15px 5%;
     font-size: 0.95rem;
-    color: $med_txt;
+    color: $txt_med_grey;
 
     @include l_screen {
       font-size: 1.1rem;
     }
 
     &--bold {
-      color: $dark_txt;
+      color: $txt_dark_grey;
       font-weight: 600;
     }
   }

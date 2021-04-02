@@ -7,7 +7,7 @@ function Hero(props) {
     <div className="hero">
       <div className="hero__image-wrap">
         <div className="hero__image-container">
-          <Image src="/images/hero.jpeg" layout="fill" objectFit="cover" />
+          <Image src={props.image} layout="fill" objectFit="cover" />
         </div>
       </div>
 

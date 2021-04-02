@@ -5,7 +5,7 @@ import Link from "next/link";
 function HouseCard() {
   return (
     <li className="house-card">
-      <Link href="/">
+      <Link href="/offer/id">
         <a>
           <Image
             className="house-card__image"

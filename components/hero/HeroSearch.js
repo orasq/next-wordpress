@@ -14,12 +14,13 @@ function HeroSearch() {
   return (
     <div className="hero-search">
       <Select
+        instanceId="search"
         placeholder="What are you looking for ?"
         classNamePrefix="hero-search"
         className="hero-search__select"
         options={options}
       />
-      <button class="hero-search__button">
+      <button className="hero-search__button">
         <FaSearch />
       </button>
     </div>

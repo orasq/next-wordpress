@@ -1,0 +1,24 @@
+.char-table {
+  display: flex;
+  flex-direction: column;
+
+  & > * + * {
+    border-top: 1px solid $surface_light_grey;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 0.8rem;
+
+    @include m_screen {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__key {
+    color: $txt_med_grey;
+  }
+}

@@ -1,0 +1,123 @@
+.house-page {
+  padding-top: 100px;
+
+  @include s_screen {
+    padding-top: 120px;
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: $radius_big;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%; /* padding is calculated as a percentage of its parent element’s width */
+
+      @include m_screen {
+        padding-bottom: 50%; /* padding is calculated as a percentage of its parent element’s width */
+      }
+    }
+  }
+
+  &__header-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__header-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 25px;
+    background: #fff;
+    border-radius: $radius_big;
+    font-size: 1rem;
+    color: $txt_med_grey;
+
+    @include s_screen {
+      font-size: 1.3rem;
+    }
+
+    @include l_screen {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__header-info-left {
+    & span {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: $txt_dark_grey;
+    }
+  }
+
+  &__header-info-right {
+    padding: 10px 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 30px 0;
+
+    @include l_screen {
+      grid-template-columns: 2fr 1fr;
+      padding: 50px 0;
+    }
+  }
+
+  &__content-wrap {
+    padding: 20px 25px;
+    border-radius: $radius_big;
+
+    @include m_screen {
+      padding: 40px 45px;
+    }
+
+    &--char {
+      background: #fff;
+    }
+
+    & > p + p {
+      margin-top: 20px;
+    }
+
+    h2,
+    p {
+      font-size: 1rem;
+
+      @include m_screen {
+        font-size: 1.25rem;
+      }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+
+      @include m_screen {
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}

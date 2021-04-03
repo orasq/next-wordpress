@@ -1,5 +1,8 @@
 import Head from "next/head";
 
+import { gql } from "@apollo/client";
+import { client } from "../lib/apollo";
+
 // components import
 import Hero from "../components/hero/Hero";
 import HouseCardList from "../components/houses/HouseCardList";
@@ -8,7 +11,7 @@ import ContentWrapper from "../components/layout/ContentWrapper";
 import Section from "../components/layout/Section";
 import HeroSearch from "../components/hero/HeroSearch";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -32,10 +35,39 @@ export default function Home() {
           </Section>
           <Section>
             <h2 className="text-center uppercase mb-l">Latest news</h2>
-            <PostCardList />
+            <PostCardList posts={props.posts} />
           </Section>
         </ContentWrapper>
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const results = await client.query({
+    query: gql`
+      query GetHomePageWordpressPosts {
+        posts {
+          nodes {
+            date
+            featuredImage {
+              node {
+                sourceUrl
+                id
+              }
+            }
+            title
+            id
+            slug
+          }
+        }
+      }
+    `
+  });
+
+  return {
+    props: {
+      posts: results.data.posts.nodes
+    }
+  };
 }

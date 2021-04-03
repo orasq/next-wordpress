@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 function PostCard(props) {
   return (
     <li className="post-card">
-      <Link href={`/blog/${props.idLayout}`}>
+      <Link href={`/blog/${props.post.slug}`}>
         <a>
           <motion.div className="post-card__image-wrap" layoutId={props.idLayout}>
             <Image
               className="post-card__image"
-              src="/images/news-1.jpeg"
+              src={props.post.featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
               alt="..."
             />
           </motion.div>
           <div className="post-card__text">
-            <h3>Lorem ipsum Dolor sit met</h3>
+            <h3>{props.post.title}</h3>
             <span>
-              Posted on <time dateTime="2021-12-09">9th of December 2021</time>
+              Posted on <time dateTime="2021-12-09">{props.post.date}</time>
             </span>
           </div>
         </a>

@@ -1,6 +1,10 @@
 import Head from "next/head";
 import { AnimateSharedLayout } from "framer-motion";
 
+// apollo
+import { ApolloProvider } from "@apollo/client";
+import { client } from "../lib/apollo";
+
 import "../styles/styles.scss";
 
 //components import
@@ -10,7 +14,7 @@ import Navigation from "../components/layout/Navigation";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <ApolloProvider client={client}>
       <AnimateSharedLayout>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -25,7 +29,7 @@ function MyApp({ Component, pageProps }) {
 
         <Footer />
       </AnimateSharedLayout>
-    </>
+    </ApolloProvider>
   );
 }
 

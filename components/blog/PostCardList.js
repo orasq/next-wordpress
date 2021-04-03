@@ -1,12 +1,11 @@
 import PostCard from "./PostCard";
 
-function PostCardList() {
+function PostCardList(props) {
   return (
     <ul className="post-card-list">
-      <PostCard idLayout="post-1" />
-      <PostCard idLayout="post-2" />
-      <PostCard idLayout="post-3" />
-      <PostCard idLayout="post-4" />
+      {props.posts.map(post => {
+        return <PostCard key={post.id} post={post} idLayout={`post-${post.id}`} />;
+      })}
     </ul>
   );
 }

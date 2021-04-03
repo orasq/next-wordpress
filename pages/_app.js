@@ -20,7 +20,9 @@ function MyApp({ Component, pageProps }) {
 
         <Header />
         <Navigation />
+
         <Component {...pageProps} />
+
         <Footer />
       </AnimateSharedLayout>
     </>

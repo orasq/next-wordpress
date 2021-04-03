@@ -20,6 +20,8 @@ function Hero(props) {
       window.addEventListener("scroll", imageZoom);
     }
 
+    scrollEvent();
+
     return () => {
       window.removeEventListener("scroll", imageZoom);
     };

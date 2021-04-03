@@ -10,7 +10,7 @@ function Hero(props) {
   const heroImage = useRef(null);
 
   function imageZoom(e) {
-    if (window.pageYOffset <= window.innerHeight) {
+    if (window.pageYOffset <= window.innerHeight && heroImage.current) {
       heroImage.current.style.transform = `scale(${1 + window.pageYOffset / 2000})`;
     }
   }
@@ -19,10 +19,6 @@ function Hero(props) {
     function scrollEvent() {
       window.addEventListener("scroll", imageZoom);
     }
-    // use of setTimeout to avoid problem with ref beeing not yet defined while page transition
-    setTimeout(() => {
-      scrollEvent();
-    }, 1000);
 
     return () => {
       window.removeEventListener("scroll", imageZoom);

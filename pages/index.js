@@ -3,6 +3,8 @@ import Head from "next/head";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 
+import { motion } from "framer-motion";
+
 // components import
 import Hero from "../components/hero/Hero";
 import HouseCardList from "../components/houses/HouseCardList";
@@ -18,7 +20,7 @@ export default function Home(props) {
         <title>Home</title>
       </Head>
 
-      <main>
+      <motion.main key="homepage" exit={{ opacity: 0 }}>
         <Hero image="/images/hero.jpeg">
           <div className="hero__content-wrap">
             <div className="hero__text-wrap">
@@ -38,7 +40,7 @@ export default function Home(props) {
             <PostCardList posts={props.posts} />
           </Section>
         </ContentWrapper>
-      </main>
+      </motion.main>
     </>
   );
 }
@@ -68,8 +70,8 @@ export async function getStaticProps() {
             date
             featuredImage {
               node {
+                altText
                 sourceUrl
-                id
               }
             }
             title

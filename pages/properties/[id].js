@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { gql } from "@apollo/client";
 import { client } from "../../lib/apollo";
@@ -11,6 +12,8 @@ import CharTable from "../../components/houses/CharTable";
 import ContentWrapper from "../../components/layout/ContentWrapper";
 
 export default function HousePage(props) {
+  const router = useRouter();
+
   const characteristics = {
     bathrooms: props.property.acfPropertyInfos.bathrooms,
     bedrooms: props.property.acfPropertyInfos.bedrooms,
@@ -21,12 +24,20 @@ export default function HousePage(props) {
     yearOfConstruction: props.property.acfPropertyInfos.yearOfConstruction
   };
   return (
-    <AnimatePresence exitBeforeEnter>
+    <>
+      <Head>
+        <title>{props.property.acfPropertyInfos.location}</title>
+      </Head>
       <motion.main
-        key="modal"
+        key={router.pathname}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        exit={{
+          opacity: 0,
+          transition: {
+            duration: 2
+          }
+        }}
       >
         <ContentWrapper>
           <div className="house-page">
@@ -67,7 +78,7 @@ export default function HousePage(props) {
           </div>
         </ContentWrapper>
       </motion.main>
-    </AnimatePresence>
+    </>
   );
 }
 

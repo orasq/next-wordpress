@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import { FaAngleLeft } from "react-icons/fa";
 
 import { gql } from "@apollo/client";
@@ -34,6 +35,8 @@ const stagger = {
 };
 
 export default function BlogPost(props) {
+  const router = useRouter();
+
   const fullDate = new Date(props.post.date);
   const attributeDate = `${fullDate.getFullYear()}-${
     fullDate.getMonth() + 1
@@ -44,10 +47,18 @@ export default function BlogPost(props) {
   return (
     <>
       <Head>
-        <title>Blog post</title>
+        <title>{props.post.title} | Blog</title>
       </Head>
 
-      <main>
+      <motion.main
+        key={router.pathname}
+        exit={{
+          opacity: 0,
+          transition: {
+            duration: 2
+          }
+        }}
+      >
         <Hero
           idLayout={`post-${props.post.id}`}
           altText={props.post.featuredImage.node.altText}
@@ -83,7 +94,7 @@ export default function BlogPost(props) {
             />
           </div>
         </ContentWrapper>
-      </main>
+      </motion.main>
     </>
   );
 }

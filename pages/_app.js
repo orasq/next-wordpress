@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 // apollo
 import { ApolloProvider } from "@apollo/client";
@@ -24,9 +24,9 @@ function MyApp({ Component, pageProps }) {
 
         <Header />
         <Navigation />
-
-        <Component {...pageProps} />
-
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} />
+        </AnimatePresence>
         <Footer />
       </AnimateSharedLayout>
     </ApolloProvider>

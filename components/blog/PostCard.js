@@ -21,7 +21,7 @@ function PostCard(props) {
               src={props.post.featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt="..."
+              alt={props.post.featuredImage.node.altText}
             />
           </motion.div>
           <div className="post-card__text">

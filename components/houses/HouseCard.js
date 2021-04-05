@@ -18,7 +18,7 @@ function HouseCard(props) {
           <div className="house-card__text">
             <h4 className="house-card__text--bold">{props.property.acfPropertyInfos.location}</h4>
             <div className="house-card__sub-data">
-              <span>€ {props.property.acfPropertyInfos.price}</span>
+              <span>€ {props.property.acfPropertyInfos.price.toLocaleString()}</span>
               <span>{props.property.acfPropertyInfos.livingArea} m²</span>
             </div>
           </div>

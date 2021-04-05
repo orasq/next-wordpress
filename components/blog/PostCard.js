@@ -3,6 +3,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 function PostCard(props) {
+  const fullDate = new Date(props.post.date);
+  const attributeDate = `${fullDate.getFullYear()}-${
+    fullDate.getMonth() + 1
+  }-${fullDate.getDate()}`;
+  const displayedDate = `${fullDate.getDate()}/${
+    fullDate.getMonth() + 1
+  }/${fullDate.getFullYear()}`;
+
   return (
     <li className="post-card">
       <Link href={`/blog/${props.post.slug}`}>
@@ -19,7 +27,7 @@ function PostCard(props) {
           <div className="post-card__text">
             <h3>{props.post.title}</h3>
             <span>
-              Posted on <time dateTime="2021-12-09">{props.post.date}</time>
+              Posted on <time dateTime={attributeDate}>{displayedDate}</time>
             </span>
           </div>
         </a>

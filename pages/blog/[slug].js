@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaAngleLeft } from "react-icons/fa";
 
@@ -35,7 +34,13 @@ const stagger = {
 };
 
 export default function BlogPost(props) {
-  const router = useRouter();
+  const fullDate = new Date(props.post.date);
+  const attributeDate = `${fullDate.getFullYear()}-${
+    fullDate.getMonth() + 1
+  }-${fullDate.getDate()}`;
+  const displayedDate = `${fullDate.getDate()}/${
+    fullDate.getMonth() + 1
+  }/${fullDate.getFullYear()}`;
   return (
     <>
       <Head>
@@ -58,7 +63,7 @@ export default function BlogPost(props) {
               {props.post.title}
             </motion.h1>
             <motion.span variants={fadeInUp}>
-              Posted on <time dateTime="2021-12-09">{props.post.date}</time>
+              Posted on <time dateTime={attributeDate}>{displayedDate}</time>
             </motion.span>
           </motion.div>
         </Hero>

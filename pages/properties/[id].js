@@ -11,6 +11,15 @@ import CharTable from "../../components/houses/CharTable";
 import ContentWrapper from "../../components/layout/ContentWrapper";
 
 export default function HousePage(props) {
+  const characteristics = {
+    bathrooms: props.property.acfPropertyInfos.bathrooms,
+    bedrooms: props.property.acfPropertyInfos.bedrooms,
+    garageCapacity: props.property.acfPropertyInfos.garageCapacity,
+    livingArea: props.property.acfPropertyInfos.livingArea,
+    lotSurfaceArea: props.property.acfPropertyInfos.lotSurfaceArea,
+    typeOfProperty: props.property.acfPropertyInfos.typeOfProperty,
+    yearOfConstruction: props.property.acfPropertyInfos.yearOfConstruction
+  };
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.main
@@ -37,7 +46,7 @@ export default function HousePage(props) {
                   {props.property.acfPropertyInfos.livingArea} m²
                 </div>
                 <div className="house-page__header-info-right">
-                  € {props.property.acfPropertyInfos.price}
+                  € {props.property.acfPropertyInfos.price.toLocaleString()}
                 </div>
               </div>
             </div>
@@ -52,7 +61,7 @@ export default function HousePage(props) {
               </div>
               <div className="house-page__content-wrap house-page__content-wrap--characteristics">
                 <h2>Characteristics</h2>
-                <CharTable />
+                <CharTable characteristics={characteristics} />
               </div>
             </div>
           </div>
@@ -77,7 +86,7 @@ export async function getStaticPaths() {
 
   return {
     paths: results.data.properties.nodes.map(({ id }) => {
-      return { params: { id } };
+      return { params: { id: id } };
     }),
     fallback: false
   };

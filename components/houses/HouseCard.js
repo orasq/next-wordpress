@@ -2,24 +2,24 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-function HouseCard() {
+function HouseCard(props) {
   return (
     <li className="house-card">
-      <Link href="/offer/id">
+      <Link href={`/properties/${props.property.id}`}>
         <a>
           <Image
             className="house-card__image"
-            src="/images/house-1.jpeg"
-            alt="..."
+            src={props.property.featuredImage.node.sourceUrl}
+            alt={props.property.featuredImage.node.altText}
             width="450"
             height="296"
           ></Image>
 
           <div className="house-card__text">
-            <h4 className="house-card__text--bold">Woluwe-Saint-Pierre</h4>
+            <h4 className="house-card__text--bold">{props.property.acfPropertyInfos.location}</h4>
             <div className="house-card__sub-data">
-              <span>€ 2.150.000</span>
-              <span>500 m²</span>
+              <span>€ {props.property.acfPropertyInfos.price}</span>
+              <span>{props.property.acfPropertyInfos.livingArea} m²</span>
             </div>
           </div>
         </a>

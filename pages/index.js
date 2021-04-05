@@ -31,7 +31,7 @@ export default function Home(props) {
         <ContentWrapper>
           <Section>
             <h2 className="text-center uppercase mb-l">Properties in the spotlight</h2>
-            <HouseCardList />
+            <HouseCardList properties={props.properties} />
           </Section>
           <Section>
             <h2 className="text-center uppercase mb-l">Latest news</h2>
@@ -46,7 +46,23 @@ export default function Home(props) {
 export async function getStaticProps() {
   const results = await client.query({
     query: gql`
-      query GetHomePageWordpressPosts {
+      query GetHomePageData {
+        properties {
+          nodes {
+            acfPropertyInfos {
+              livingArea
+              location
+              price
+            }
+            id
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
+          }
+        }
         posts {
           nodes {
             date
@@ -67,6 +83,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      properties: results.data.properties.nodes,
       posts: results.data.posts.nodes
     }
   };

@@ -90,34 +90,33 @@
       padding: 40px 45px;
     }
 
-    &--char {
+    &--characteristics {
       background: #fff;
-    }
-
-    & > p + p {
-      margin-top: 20px;
-    }
-
-    h2,
-    p {
-      font-size: 1rem;
-
-      @include m_screen {
-        font-size: 1.25rem;
-      }
     }
 
     h2 {
       margin-bottom: 20px;
+      font-size: 1rem;
       text-transform: uppercase;
 
       @include m_screen {
+        font-size: 1.25rem;
         margin-bottom: 30px;
       }
     }
+  }
 
+  &__description {
+    & > p + p {
+      margin-top: 20px;
+    }
     p {
+      font-size: 1rem;
       line-height: 1.5;
+
+      @include m_screen {
+        font-size: 1.25rem;
+      }
     }
   }
 }

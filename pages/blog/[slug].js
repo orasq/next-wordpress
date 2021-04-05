@@ -44,7 +44,7 @@ export default function BlogPost(props) {
 
       <main>
         <Hero
-          idLayout={router.query.slug}
+          idLayout={`post-${props.post.id}`}
           altText={props.post.featuredImage.node.altText}
           image={props.post.featuredImage.node.sourceUrl}
         >
@@ -120,6 +120,7 @@ export async function getStaticProps({ params }) {
           }
           title
           date
+          id
         }
       }
     `,

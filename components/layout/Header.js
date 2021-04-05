@@ -12,7 +12,7 @@ function Header() {
 
   useEffect(() => {
     // if on page without "hero"
-    if (router.pathname.includes("/offer/")) {
+    if (router.pathname.includes("/properties/")) {
       setIsHeaderDark(true);
     } else {
       setIsHeaderDark(false);

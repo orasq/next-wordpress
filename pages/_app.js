@@ -15,7 +15,7 @@ import Navigation from "../components/layout/Navigation";
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
-      <AnimateSharedLayout>
+      <AnimateSharedLayout type="crossfade">
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta name="pinterest" content="nopin" />

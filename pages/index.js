@@ -20,7 +20,7 @@ export default function Home(props) {
         <title>Home</title>
       </Head>
 
-      <motion.main key="homepage" exit={{ opacity: 0 }}>
+      <motion.main key="homepage" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Hero image="/images/hero.jpeg">
           <div className="hero__content-wrap">
             <div className="hero__text-wrap">

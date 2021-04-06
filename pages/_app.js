@@ -15,20 +15,20 @@ import Navigation from "../components/layout/Navigation";
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
-      <AnimateSharedLayout type="crossfade">
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="pinterest" content="nopin" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="pinterest" content="nopin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
 
-        <Header />
-        <Navigation />
+      <Header />
+      <Navigation />
+      <AnimateSharedLayout type="crossfade">
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} />
         </AnimatePresence>
-        <Footer />
       </AnimateSharedLayout>
+      <Footer />
     </ApolloProvider>
   );
 }

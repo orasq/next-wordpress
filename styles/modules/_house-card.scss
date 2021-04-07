@@ -21,12 +21,8 @@
 
   &__text {
     padding: 15px 5%;
-    font-size: 0.95rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: $txt_med_grey;
-
-    @include l_screen {
-      font-size: 1.1rem;
-    }
 
     &--bold {
       color: $txt_dark_grey;

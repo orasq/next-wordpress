@@ -44,8 +44,6 @@ const staggerBottom = {
 export default function HousePage(props) {
   const router = useRouter();
 
-  console.log(router.asPath);
-
   const formattedPrice = props.property.acfPropertyInfos.price.toLocaleString("en-US");
 
   const characteristics = {

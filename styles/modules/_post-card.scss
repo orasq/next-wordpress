@@ -1,18 +1,16 @@
 .post-card {
   position: relative;
   grid-column: span 6;
-  height: 300px;
+  height: clamp(300px, 50vw, 550px);
   border-radius: $radius_big;
   overflow: hidden;
 
   @include s_screen {
     grid-column: span 3;
-    height: 400px;
   }
 
   @include l_screen {
     grid-column: span 2;
-    height: 550px;
   }
 
   &:nth-child(4n + 1),
@@ -50,37 +48,20 @@
   }
 
   &__text {
-    --position: 20px;
+    --position: clamp(20px, 3vw, 30px);
     position: absolute;
     bottom: var(--position);
     left: var(--position);
     padding-right: var(--position);
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 2vw, 1.125rem);
     font-weight: 300;
     color: #fff;
     z-index: 2;
-
-    @include s_screen {
-      --position: 30px;
-      font-size: 1rem;
-    }
-
-    @include m_screen {
-      font-size: 1.125rem;
-    }
   }
 
   & h3 {
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     font-weight: 600;
-
-    @include s_screen {
-      font-size: 1.6rem;
-    }
-
-    @include l_screen {
-      font-size: 1.8rem;
-    }
   }
 }

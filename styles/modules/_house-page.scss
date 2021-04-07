@@ -1,9 +1,5 @@
 .house-page {
-  padding-top: 100px;
-
-  @include s_screen {
-    padding-top: 120px;
-  }
+  padding-top: clamp(100px, 11vw, 120px);
 
   &__header {
     position: relative;
@@ -15,11 +11,11 @@
     &::after {
       content: "";
       display: block;
-      padding-bottom: 100%; /* padding is calculated as a percentage of its parent element’s width */
-
-      @include m_screen {
-        padding-bottom: 50%; /* padding is calculated as a percentage of its parent element’s width */
-      }
+      padding-bottom: clamp(
+        300px,
+        50%,
+        660px
+      ); /* padding is calculated as a percentage of its parent element’s width */
     }
   }
 
@@ -44,16 +40,8 @@
     padding: 15px 25px;
     background: #fff;
     border-radius: $radius_big;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.6rem);
     color: $txt_med_grey;
-
-    @include s_screen {
-      font-size: 1.3rem;
-    }
-
-    @include l_screen {
-      font-size: 1.6rem;
-    }
   }
 
   &__header-info-left {
@@ -74,35 +62,25 @@
     grid-template-columns: 1fr;
     align-items: flex-start;
     gap: 15px;
-    padding: 30px 0;
+    padding: clamp(20px, 3vw, 50px) 0;
 
     @include l_screen {
       grid-template-columns: 2fr 1fr;
-      padding: 50px 0;
     }
   }
 
   &__content-wrap {
-    padding: 20px 25px;
+    padding: clamp(20px, 2vw, 40px) clamp(25px, 3vw, 45px);
     border-radius: $radius_big;
-
-    @include m_screen {
-      padding: 40px 45px;
-    }
 
     &--characteristics {
       background: #fff;
     }
 
     h2 {
-      margin-bottom: 20px;
-      font-size: 1rem;
+      margin-bottom: clamp(20px, 3vw, 30px);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
       text-transform: uppercase;
-
-      @include m_screen {
-        font-size: 1.25rem;
-        margin-bottom: 30px;
-      }
     }
   }
 
@@ -111,12 +89,8 @@
       margin-top: 20px;
     }
     p {
-      font-size: 1rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
       line-height: 1.5;
-
-      @include m_screen {
-        font-size: 1.25rem;
-      }
     }
   }
 }

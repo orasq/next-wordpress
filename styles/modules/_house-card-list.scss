@@ -1,11 +1,17 @@
 .house-card-list {
+  --gap: 15px;
+
   display: grid;
-  justify-content: center;
+  gap: var(--gap);
+  justify-items: center;
 
-  gap: 15px;
+  /* Holy Albatross technique ... 
+  Allow "3 columns" layout to switch directly to "1 column" without
+  passing by a "2 columns" state */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(33.3333% - var(--gap), ((300px * 3) - 100%) * 999, 100%), 1fr)
+  );
+
   list-style: none;
-
-  @include s_screen {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

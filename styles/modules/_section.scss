@@ -1,11 +1,3 @@
 .section {
-  margin: 70px 0;
-
-  @include m_screen {
-    margin: 100px 0;
-  }
-
-  @include xl_screen {
-    margin: 200px 0;
-  }
+  margin: clamp(70px, 12vw, 200px) 0;
 }

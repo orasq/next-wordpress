@@ -44,31 +44,19 @@
   }
 
   &__text-wrap {
-    margin-bottom: 50px;
+    margin-bottom: clamp(50px, 5vw, 100px);
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-
-    @include m_screen {
-      margin-bottom: 100px;
-    }
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 600;
     margin-bottom: 10px;
-
-    @include m_screen {
-      font-size: 3rem;
-    }
   }
 
   &__subtitle {
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 2vw, 2rem);
     font-weight: 300;
-
-    @include m_screen {
-      font-size: 2rem;
-    }
   }
 
   &__form-wrap {
@@ -80,34 +68,21 @@
 
   &__post-title-wrap {
     position: absolute;
-    bottom: 100px;
+    bottom: clamp(100px, 8vw, 170px);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: $wrapper_width;
-    padding: 0 30px;
-    font-size: 0.9rem;
+    padding-left: clamp(30px, 3vw, 55px);
+    padding-right: clamp(30px, 15vw, 270px);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 300;
     color: #fff;
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 
-    @include l_screen {
-      bottom: 8vw;
-      font-size: 1.5rem;
-    }
-
-    @include xl_screen {
-      padding: 0 15vw 0 3vw;
-    }
-
     h1 {
-      margin-bottom: 10px;
-      font-size: 2rem;
-
-      @include m_screen {
-        margin-bottom: 15px;
-        font-size: 4vw;
-      }
+      margin-bottom: clamp(10px, 1vw, 15px);
+      font-size: clamp(2rem, 4vw, 5rem);
     }
 
     span {

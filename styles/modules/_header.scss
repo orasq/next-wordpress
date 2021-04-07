@@ -7,12 +7,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px;
+  padding: clamp(30px, 5vw, 50px);
   z-index: 2;
-
-  @include s_screen {
-    padding: 50px;
-  }
 
   &--dark .header__logo-wrap,
   &--dark .header__burger {
